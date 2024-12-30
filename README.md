@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Thundera Biblioteca" title="Thundera Biblioteca" src="./src/assets/logo.png" width="300px" />
+    <img alt="Thundera Biblioteca" title="Thundera Biblioteca" src="./src/assets/logo.png" width="200px" />
 </h1>
 
 <div align="center">
