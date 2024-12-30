@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="Logo Thundera Biblioteca" class="logo" src="./assets/logo.png">
   <VueAnnouncer />
   <DocumentationPage msg="Bem-vindo à Biblioteca Thundera!"/>
 </template>
@@ -25,5 +25,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.logo {
+  width: 15rem;
+  padding-bottom: 4rem;
 }
 </style>

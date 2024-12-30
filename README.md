@@ -1,4 +1,19 @@
-# Documentação da Biblioteca Thundera
+<h1 align="center">
+    <img alt="Thundera Biblioteca" title="Thundera Biblioteca" src="./src/assets/logo.png" width="300px" />
+</h1>
+
+<div align="center">
+    <h3> 🔵 Biblioteca que ajuda desenvolvedores a construírem aplicações web acessíveis para pessoas com deficiência visual. 🔵 </h3>
+    <a href="https://github.com/PedroCantanhede" target="_blank">
+      <img src="https://img.shields.io/static/v1?label=Author&message=PedroCantanhede&color=64b9ff&style=for-the-badge" target="_blank" alt="Pedro Cantanhêde">
+    </a>
+    <img src="https://img.shields.io/github/repo-size/PedroCantanhede/thundera?color=64b9ff&style=for-the-badge" alt="Repositório"> 
+    <img src="https://img.shields.io/github/license/PedroCantanhede/thundera?color=64b9ff&style=for-the-badge" alt="Licença">
+    <img src="https://img.shields.io/github/languages/count/PedroCantanhede/thundera?color=64b9ff&style=for-the-badge" alt="Linguagens">
+</div>
+
+
+# Biblioteca Thundera
 
 Bem-vindo à documentação oficial da **Thundera**! Esta biblioteca foi criada para ajudar desenvolvedores a construírem aplicações web acessíveis para pessoas cegas ou com deficiência visual, integrando diversas ferramentas úteis para garantir acessibilidade e experiência do usuário de alta qualidade.
 
@@ -127,7 +142,7 @@ Concentre o foco dentro de elementos específicos:
 ---
 
 ### **Form Kit**
-**Link da Documentação**: [Form Kit](https://formkit.com/docs)
+**Link da Documentação**: [Form Kit](https://formkit.com/)
 
 **O que faz?**
 Facilita a criação de formulários acessíveis e dinâmicos.
@@ -141,7 +156,7 @@ Adicione campos de formulário com configuração simples:
 ---
 
 ### **Skip To**
-**Link da Documentação**: [Skip To](https://github.com/vue-a11y/skip-to)
+**Link da Documentação**: [Skip To](https://github.com/vue-a11y/vue-skip-to)
 
 **O que faz?**
 Permite criar links para saltar diretamente para o conteúdo principal ou outras seções importantes.
@@ -155,7 +170,7 @@ Adicione o componente no topo do layout principal:
 ---
 
 ### **Sr Only**
-**Link da Documentação**: [Sr Only](https://github.com/vue-a11y/vue-sr-only)
+**Link da Documentação**: [Sr Only](https://bootstrap-vue.org/docs/reference/accessibility)
 
 **O que faz?**
 Permite criar elementos visíveis apenas para leitores de tela.
@@ -171,7 +186,7 @@ Envolva elementos com o componente para torná-los visíveis apenas para tecnolo
 ## **Ferramenta de Auditoria de Acessibilidade**
 
 ### **Vue Axe**
-**Link da Documentação**: [Vue Axe](https://github.com/vue-a11y/vue-axe)
+**Link da Documentação**: [Vue Axe](https://axe.vue-a11y.com/)
 
 **O que faz?**
 Ajuda a identificar e corrigir problemas de acessibilidade durante o desenvolvimento.

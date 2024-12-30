@@ -5,7 +5,7 @@
       <h1>{{ msg }}</h1>
       <p>
         Esse é um guia das documentações integradas e de como utilizar essas bibliotecas no seu desenvolvimento.
-        <a href="https://cli.vuejs.org" target="_blank" rel="noopener">Documentação Thundera</a>.
+        <a href="https://github.com/PedroCantanhede/thundera" target="_blank" rel="noopener">Documentação Thundera</a>.
       </p>
       <h3>Documentação das Libs</h3>
       <ul>
