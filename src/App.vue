@@ -1,15 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <VueAnnouncer />
+  <DocumentationPage msg="Bem-vindo à Biblioteca Thundera!"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DocumentationPage from './components/DocumentationPage.vue';
+import VueAnnouncer from './components/VueAnnouncer.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    DocumentationPage,
+    VueAnnouncer
   }
 }
 </script>
