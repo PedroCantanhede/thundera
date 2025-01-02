@@ -1,18 +1,16 @@
 <template>
   <img alt="Logo Thundera Biblioteca" class="logo" src="./assets/logo.png">
-  <VueAnnouncer />
-  <DocumentationPage msg="Bem-vindo à Biblioteca Thundera!"/>
+  <VueAnnouncer class="sr-only" />
+  <DocumentationPage msg="Bem-vindo à Biblioteca Thundera!" />
 </template>
 
 <script>
 import DocumentationPage from './components/DocumentationPage.vue';
-import VueAnnouncer from './components/VueAnnouncer.vue';
 
 export default {
   name: 'App',
   components: {
-    DocumentationPage,
-    VueAnnouncer
+    DocumentationPage
   }
 }
 </script>
