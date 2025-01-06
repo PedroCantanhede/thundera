@@ -5,10 +5,10 @@
     role="alert"
     aria-live="assertive"
   >
-    <!-- Ícone dentro do círculo -->
+    <!-- Ícone Material Icon -->
     <div class="icon-container">
       <slot name="icon">
-        <i class="fas fa-check-circle"></i>
+        <span class="material-icons">check_circle</span>
       </slot>
     </div>
 
@@ -142,18 +142,10 @@ export default {
   }
 }
 
-/* Ícone dentro do círculo */
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 50px;
-  background-color: #7638c7;
-  color: #ffffff;
-  border-radius: 50%;
-  font-size: 24px;
-  flex-shrink: 0;
+/* Ícone Material Icon */
+.icon-container .icon {
+  font-size: 36px;
+  color: #5a2e99;
 }
 
 /* Título e descrição */

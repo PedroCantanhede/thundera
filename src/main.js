@@ -1,6 +1,8 @@
 import { createApp, h, Fragment } from 'vue';
 import App from './App.vue';
+
 import './assets/styles/utils.css';
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 import { plugin, defaultConfig } from '@formkit/vue';
 import { VueFinalModal } from 'vue-final-modal';

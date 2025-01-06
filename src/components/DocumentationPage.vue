@@ -179,6 +179,33 @@
       :dismissTimeout="5000"
     />
 
+    <br><br><br><br><br><br>
+    <!-- Tooltip -->
+    <div class="tooltip">
+      <AccessibleTooltip content="Este é um tooltip acessível!">
+        <template #icon>
+          <i class="fas fa-question-circle"></i>
+        </template>
+      </AccessibleTooltip>
+    </div>
+
+    <!-- Form -->
+    <div class="form">
+      <AccessibleForm
+        title="Cadastro"
+        buttonText="Cadastrar"
+        @submit="handleFormSubmit"
+      />
+    </div>
+
+    <!-- Button -->
+    <h1>Exemplo do Announced Button</h1>
+    <AnnouncedButton
+      label="Salvar"
+      aria-label="Botão para salvar os dados"
+      announcement="Os dados foram salvos com sucesso!"
+      @click="handleSave"
+    />
   </div>
 </template>
 
@@ -189,6 +216,9 @@ import AccessibleCard from "./AccessibleCard.vue";
 import AccessibleDialog from "./AccessibleDialog.vue";
 import AccessibleList from "./AccessibleList.vue";
 import AccessibleAlert from "./AccessibleAlert.vue";
+import AccessibleTooltip from "./AccessibleTooltip.vue";
+import AccessibleForm from "./AccessibleForm.vue";
+import AnnouncedButton from "./AnnouncedButton.vue";
 
 export default {
   name: "DocumentationPage",
@@ -197,7 +227,10 @@ export default {
     AccessibleCard,
     AccessibleDialog,
     AccessibleList,
-    AccessibleAlert
+    AccessibleAlert,
+    AccessibleTooltip,
+    AccessibleForm,
+    AnnouncedButton
   },
   props: {},
   setup() {
@@ -230,6 +263,9 @@ export default {
     },
     handleItemSelected(item) {
       console.log(`Você selecionou: ${item}`);
+    },
+    handleFormSubmit(formData) {
+      console.log("Dados do formulário:", formData);
     },
   },
 };
