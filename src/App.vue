@@ -1,18 +1,14 @@
 <template>
-  <img alt="Logo Thundera Biblioteca" class="logo" src="./assets/logo.png">
+  <img alt="Logo Thundera Biblioteca" class="logo" src="./assets/logo.png" />
   <VueAnnouncer class="sr-only" />
-  <DocumentationPage msg="Bem-vindo à Biblioteca Thundera!" />
+  <!-- Renderiza o componente da rota atual -->
+  <router-view />
 </template>
 
 <script>
-import DocumentationPage from './components/DocumentationPage.vue';
-
 export default {
-  name: 'App',
-  components: {
-    DocumentationPage
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>

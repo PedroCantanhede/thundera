@@ -1,5 +1,6 @@
 import { createApp, h, Fragment } from 'vue';
 import App from './App.vue';
+import router from './router'; // Importação do roteador
 
 import './assets/styles/utils.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV === 'development') {
   // Configura o VueAxe
   app.use(VueAxe.default);
 
-  // Configura o FormKit
+  // Configurações do FormKit
   app.use(plugin, defaultConfig);
 
   // Configura o Vue Final Modal
@@ -38,8 +39,12 @@ if (process.env.NODE_ENV === 'development') {
   app.component('VueFinalModal', VueFinalModal);
 }
 
+// Adiciona o roteador
+app.use(router);
+
 // Registra o SkipTo e o FocusLock como componentes globais
 app.component('SkipTo', SkipTo);
 app.component('FocusLock', FocusLock);
 
+// Monta o aplicativo
 app.mount('#app');
