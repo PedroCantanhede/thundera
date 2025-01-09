@@ -207,6 +207,38 @@
       @click="handleSave"
     />
   </div>
+
+  <!-- SkipTobutton -->
+  <div class="skipToButton">
+    <SkipToButton target="#main-content" label="Ir para o conteúdo principal" />
+    <header>
+      <h1>Bem-vindo ao site</h1>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <h2>Conteúdo Principal</h2>
+      <p>Esta é a área principal da página.</p>
+    </main>
+  </div>
+
+  <!-- Accessible Tabs -->
+  <AccessibleTabs
+    :tabs="[
+      {
+        label: 'Introdução',
+        content: 'Bem-vindo à introdução das nossas abas acessíveis!',
+      },
+      {
+        label: 'Recursos',
+        content:
+          'Nossos recursos incluem acessibilidade, rapidez e confiabilidade.',
+      },
+      {
+        label: 'Contato',
+        content: 'Entre em contato conosco pelo e-mail: contato@exemplo.com',
+      },
+    ]"
+  />
+  
 </template>
 
 <script>
@@ -219,6 +251,8 @@ import AccessibleAlert from "./AccessibleAlert.vue";
 import AccessibleTooltip from "./AccessibleTooltip.vue";
 import AccessibleForm from "./AccessibleForm.vue";
 import AnnouncedButton from "./AnnouncedButton.vue";
+import AccessibleTabs from "./AccessibleTabs.vue";
+import SkipToButton from "./SkipToButton.vue";
 
 export default {
   name: "DocumentationPage",
@@ -230,7 +264,9 @@ export default {
     AccessibleAlert,
     AccessibleTooltip,
     AccessibleForm,
-    AnnouncedButton
+    AnnouncedButton,
+    SkipToButton,
+    AccessibleTabs
   },
   props: {},
   setup() {
@@ -252,6 +288,11 @@ export default {
       showModal: false,
       showDialog: false,
       showAlert: true,
+      tabs: [
+        { label: "Introdução", content: "Bem-vindo à introdução das nossas abas acessíveis!" },
+        { label: "Recursos", content: "Nossos recursos incluem acessibilidade, rapidez e confiabilidade." },
+        { label: "Contato", content: "Entre em contato conosco pelo e-mail: contato@exemplo.com" },
+      ],
     };
   },
   methods: {

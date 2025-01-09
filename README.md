@@ -1,3 +1,5 @@
+# Biblioteca Thundera
+
 <h1 align="center">
     <img alt="Thundera Biblioteca" title="Thundera Biblioteca" src="./src/assets/logo.png" width="200px" />
 </h1>
@@ -12,30 +14,30 @@
     <img src="https://img.shields.io/github/languages/count/PedroCantanhede/thundera?color=64b9ff&style=for-the-badge" alt="Linguagens">
 </div>
 
-
-# Biblioteca Thundera
-
-Bem-vindo à documentação oficial da **Thundera**! Esta biblioteca foi criada para ajudar desenvolvedores a construírem aplicações web acessíveis para pessoas cegas ou com deficiência visual, integrando diversas ferramentas úteis para garantir acessibilidade e experiência do usuário de alta qualidade.
-
 ---
 
 ## **Índice**
+
 1. [Introdução](#introdução)
 2. [Documentação das Libraries](#documentação-das-libraries)
-   - [Vue Announcer](#vue-announcer)
+3. [Componentes](#componentes)
+   - [AccessibleAlert](#accessiblealert)
+   - [AccessibleModal](#accessiblemodal)
+   - [AccessibleCard](#accessiblecard)
+   - [AccessibleDialog](#accessibledialog)
+   - [AccessibleList](#accessiblelist)
+   - [AccessibleTooltip](#accessibletooltip)
+   - [AccessibleForm](#accessibleform)
+   - [AnnouncedButton](#announcedbutton)
+   - [SkipToButton](#skiptobutton)
    - [AccessibleTabs](#accessibletabs)
-   - [Vue Final Modal](#vue-final-modal)
-   - [Focus Lock](#focus-lock)
-   - [Form Kit](#form-kit)
-   - [Skip To](#skip-to)
-   - [Sr Only](#sr-only)
-3. [Ferramenta de Auditoria de Acessibilidade](#ferramenta-de-auditoria-de-acessibilidade)
-   - [Vue Axe](#vue-axe)
-4. [Contribuição e Suporte](#contribuição-e-suporte)
+4. [Ferramenta de Auditoria de Acessibilidade](#ferramenta-de-auditoria-de-acessibilidade)
+5. [Contribuição e Suporte](#contribuição-e-suporte)
 
 ---
 
 ## **Introdução**
+
 A biblioteca **Thundera** reúne as melhores práticas e ferramentas da comunidade Vue para facilitar o desenvolvimento de aplicações acessíveis. Todas as ferramentas necessárias estão integradas diretamente na sua instalação.
 
 ---
@@ -46,10 +48,9 @@ A biblioteca **Thundera** reúne as melhores práticas e ferramentas da comunida
 **Link da Documentação**: [Vue Announcer](https://github.com/vue-a11y/vue-announcer)
 
 **O que faz?**
-O Vue Announcer é uma ferramenta para gerenciar mensagens dinâmicas e enviá-las para leitores de tela, garantindo que o usuário receba informações importantes durante a navegação.
+Gerencia mensagens dinâmicas e as envia para leitores de tela.
 
 **Como usar?**
-Use o `useAnnouncer` para enviar mensagens dinâmicas:
 ```javascript
 import { useAnnouncer } from '@vue-a11y/announcer';
 
@@ -57,42 +58,11 @@ const { announce } = useAnnouncer();
 announce('Mensagem anunciada para o leitor de tela');
 ```
 
----
-
 ### **AccessibleTabs**
 **Link da Documentação**: [AccessibleTabs](https://www.npmjs.com/package/vue3-accessible-tabs)
 
 **O que faz?**
-O AccessibleTabs cria abas acessíveis seguindo as melhores práticas do WAI-ARIA.
-
-**Como usar?**
-Defina abas acessíveis diretamente nos componentes:
-```vue
-<template>
-  <Tabs>
-    <TabList>
-      <Tab>Tab 1</Tab>
-      <Tab>Tab 2</Tab>
-    </TabList>
-    <TabPanels>
-      <TabPanel>Conteúdo da Tab 1</TabPanel>
-      <TabPanel>Conteúdo da Tab 2</TabPanel>
-    </TabPanels>
-  </Tabs>
-</template>
-
-<script>
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from 'vue3-accessible-tabs';
-
-export default {
-  components: {
-    Tabs, TabList, Tab, TabPanels, TabPanel,
-  },
-};
-</script>
-```
-
----
+Cria abas acessíveis seguindo as melhores práticas do WAI-ARIA.
 
 ### **Vue Final Modal**
 **Link da Documentação**: [Vue Final Modal](https://vue-final-modal.org/)
@@ -100,46 +70,11 @@ export default {
 **O que faz?**
 Cria modais acessíveis e configuráveis para aplicações Vue.
 
-**Como usar?**
-Implemente modais com suporte a leitores de tela e foco confinado:
-```vue
-<template>
-  <VueFinalModal v-model="showModal">
-    <h2>Modal Acessível</h2>
-    <p>Conteúdo do modal.</p>
-  </VueFinalModal>
-</template>
-
-<script>
-export default {
-  data() {
-    return { showModal: false };
-  },
-};
-</script>
-```
-
----
-
 ### **Focus Lock**
 **Link da Documentação**: [Focus Lock](https://github.com/theKashey/vue-focus-lock)
 
 **O que faz?**
-Mantém o foco do teclado confinado dentro de um elemento, como um modal, até que seja fechado.
-
-**Como usar?**
-Concentre o foco dentro de elementos específicos:
-```vue
-<FocusLock>
-  <div>
-    <h2>Modal com Foco</h2>
-    <button>Botão 1</button>
-    <button>Botão 2</button>
-  </div>
-</FocusLock>
-```
-
----
+Mantém o foco confinado dentro de elementos, como modais.
 
 ### **Form Kit**
 **Link da Documentação**: [Form Kit](https://formkit.com/)
@@ -147,38 +82,131 @@ Concentre o foco dentro de elementos específicos:
 **O que faz?**
 Facilita a criação de formulários acessíveis e dinâmicos.
 
-**Como usar?**
-Adicione campos de formulário com configuração simples:
-```vue
-<FormKit type="text" label="Seu nome" />
-```
-
----
-
 ### **Skip To**
 **Link da Documentação**: [Skip To](https://github.com/vue-a11y/vue-skip-to)
 
 **O que faz?**
-Permite criar links para saltar diretamente para o conteúdo principal ou outras seções importantes.
-
-**Como usar?**
-Adicione o componente no topo do layout principal:
-```vue
-<SkipTo />
-```
-
----
+Permite criar links para saltar diretamente ao conteúdo principal ou outras seções importantes.
 
 ### **Sr Only**
 **Link da Documentação**: [Sr Only](https://bootstrap-vue.org/docs/reference/accessibility)
 
 **O que faz?**
-Permite criar elementos visíveis apenas para leitores de tela.
+Cria elementos visíveis apenas para leitores de tela.
 
-**Como usar?**
-Envolva elementos com o componente para torná-los visíveis apenas para tecnologias assistivas:
+---
+
+## **Componentes**
+
+### **AccessibleAlert**
+- **Descrição**: Componente de alerta acessível.
+- **Exemplo de Uso**:
 ```vue
-<SrOnly>Texto apenas para leitores de tela</SrOnly>
+<AccessibleAlert
+  v-model:visible="showAlert"
+  title="Sucesso!"
+  description="Sua operação foi concluída com êxito."
+  :autoDismiss="true"
+  :dismissTimeout="5000"
+/>
+```
+
+### **AccessibleModal**
+- **Descrição**: Modal acessível com foco confinado.
+- **Exemplo de Uso**:
+```vue
+<AccessibleModal
+  v-model:isVisible="showModal"
+  title="Exemplo de Modal"
+  description="Conteúdo acessível com foco confinado."
+/>
+```
+
+### **AccessibleCard**
+- **Descrição**: Cartão acessível com suporte para mensagens dinâmicas.
+- **Exemplo de Uso**:
+```vue
+<AccessibleCard
+  :focusLock="false"
+  announceMessage="Interagiu com o cartão."
+>
+  <template #title>Produto</template>
+  <template #description>Descrição do produto.</template>
+</AccessibleCard>
+```
+
+### **AccessibleDialog**
+- **Descrição**: Diálogo acessível com suporte a leitores de tela.
+- **Exemplo de Uso**:
+```vue
+<AccessibleDialog
+  v-model:isVisible="showDialog"
+  title="Exemplo de Diálogo"
+  openMessage="O diálogo foi aberto."
+  closeMessage="O diálogo foi fechado."
+/>
+```
+
+### **AccessibleList**
+- **Descrição**: Lista acessível com navegação por teclado.
+- **Exemplo de Uso**:
+```vue
+<AccessibleList
+  :items="['Item 1', 'Item 2', 'Item 3']"
+  initialIndex="0"
+  @item-selected="handleItemSelected"
+/>
+```
+
+### **AccessibleTooltip**
+- **Descrição**: Tooltip acessível para leitores de tela.
+- **Exemplo de Uso**:
+```vue
+<AccessibleTooltip content="Tooltip informativo!">
+  <template #icon>
+    <i class="material-icons">info</i>
+  </template>
+</AccessibleTooltip>
+```
+
+### **AccessibleForm**
+- **Descrição**: Formulário acessível com validação dinâmica.
+- **Exemplo de Uso**:
+```vue
+<AccessibleForm
+  title="Cadastro"
+  buttonText="Cadastrar"
+  @submit="handleFormSubmit"
+/>
+```
+
+### **AnnouncedButton**
+- **Descrição**: Botão que emite mensagens dinâmicas para leitores de tela.
+- **Exemplo de Uso**:
+```vue
+<AnnouncedButton
+  label="Salvar"
+  announcement="Os dados foram salvos com sucesso!"
+/>
+```
+
+### **SkipToButton**
+- **Descrição**: Botão para saltar diretamente ao conteúdo principal.
+- **Exemplo de Uso**:
+```vue
+<SkipToButton target="#main-content" label="Ir para o conteúdo principal" />
+```
+
+### **AccessibleTabs**
+- **Descrição**: Componente de abas acessíveis com navegação por teclado.
+- **Exemplo de Uso**:
+```vue
+<AccessibleTabs
+  :tabs="[
+    { label: 'Tab 1', content: 'Conteúdo da Tab 1' },
+    { label: 'Tab 2', content: 'Conteúdo da Tab 2' }
+  ]"
+/>
 ```
 
 ---
@@ -191,13 +219,8 @@ Envolva elementos com o componente para torná-los visíveis apenas para tecnolo
 **O que faz?**
 Ajuda a identificar e corrigir problemas de acessibilidade durante o desenvolvimento.
 
-**Como usar?**
-A auditoria de acessibilidade é realizada automaticamente em desenvolvimento. Os relatórios aparecem no console ou em um popup visual.
-
 ---
 
 ## **Contribuição e Suporte**
-Contribuições para a biblioteca **Thundera** são muito bem-vindas! Siga as diretrizes do repositório para enviar pull requests ou relatar problemas.
 
-Para suporte, entre em contato através do repositório oficial no GitHub.
-
+Contribuições são bem-vindas! Para suporte, entre em contato através do repositório oficial no GitHub.
