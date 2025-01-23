@@ -65,6 +65,8 @@
       "import": "./dist/thundera-lib.esm.js",
       "require": "./dist/thundera-lib.umd.js"
     },
-    "./style": "./dist/thundera-lib.css"
+    "./style": {
+      "default": "./dist/thundera-lib.css"
+    }
   }
 }
