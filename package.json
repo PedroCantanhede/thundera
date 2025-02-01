@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "private": false,
   "main": "dist/thundera-lib.umd.js",
-  "module": "dist/thundera-lib.esm.js",
+  "module": "dist/ThunderaLib.umd.js",
   "style": "dist/thundera-lib.css",
   "files": [
     "dist",
@@ -62,11 +62,10 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/thundera-lib.esm.js",
-      "require": "./dist/thundera-lib.umd.js"
+      "import": "./dist/ThunderaLib.umd.js",
+      "require": "./dist/ThunderaLib.common.js",
+      "default": "./dist/ThunderaLib.umd.js"
     },
-    "./style": {
-      "default": "./dist/thundera-lib.css"
-    }
+    "./dist/thundera-lib.css": "./dist/thundera-lib.css"
   }
 }
