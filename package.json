@@ -66,6 +66,8 @@
       "require": "./dist/ThunderaLib.common.js",
       "default": "./dist/ThunderaLib.umd.js"
     },
-    "./dist/thundera-lib.css": "./dist/thundera-lib.css"
+    "./thundera-lib.css": {
+      "default": "./dist/ThunderaLib.css"
+    }
   }
 }
