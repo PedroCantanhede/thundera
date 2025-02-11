@@ -49,7 +49,7 @@
       </AccessibleDialog>
   
       <!-- Lista -->
-      <h2>Accessible List</h2>
+      <h2 id="main-content">Accessible List</h2>
       <AccessibleList
         :items="['Item 1', 'Item 2', 'Item 3']"
         initialIndex="0"
