@@ -1,12 +1,13 @@
-import AccessibleModal from './components/AccessibleModal.vue';
-import AccessibleCard from './components/AccessibleCard.vue';
-import AccessibleDialog from './components/AccessibleDialog.vue';
-import AccessibleList from './components/AccessibleList.vue';
-import AccessibleAlert from './components/AccessibleAlert.vue';
-import AccessibleTooltip from './components/AccessibleTooltip.vue';
-import AccessibleForm from './components/AccessibleForm.vue';
-import AnnouncedButton from './components/AnnouncedButton.vue';
-import SkipToButton from './components/SkipToButton.vue';
+import AccessibleModal from "./components/AccessibleModal.vue";
+import AccessibleCard from "./components/AccessibleCard.vue";
+import AccessibleDialog from "./components/AccessibleDialog.vue";
+import AccessibleList from "./components/AccessibleList.vue";
+import AccessibleAlert from "./components/AccessibleAlert.vue";
+import AccessibleTooltip from "./components/AccessibleTooltip.vue";
+import AccessibleForm from "./components/AccessibleForm.vue";
+import AnnouncedButton from "./components/AnnouncedButton.vue";
+import SkipToButton from "./components/SkipToButton.vue";
+import VueAnnouncer from "@vue-a11y/announcer";
 
 // Lista de componentes para facilitar o registro global
 const components = {
@@ -27,6 +28,9 @@ const ThunderaLib = {
     Object.keys(components).forEach((key) => {
       app.component(key, components[key]);
     });
+
+    // ✅ Registro do VueAnnouncer corretamente
+    app.use(VueAnnouncer);
   },
 };
 
