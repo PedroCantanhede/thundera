@@ -2,61 +2,17 @@
   <form @submit.prevent="handleSubmit" class="accessible-form">
     <h2 class="form-title">{{ title }}</h2>
 
-    <!-- Nome -->
-    <div class="form-group">
-      <label for="name" class="form-label">Nome completo</label>
+    <!-- Renderizando os campos dinamicamente -->
+    <div v-for="(field, index) in fields" :key="index" class="form-group">
+      <label :for="field.id" class="form-label">{{ field.label }}</label>
       <FormKit
-        id="name"
-        type="text"
-        name="name"
-        :validation="'required|length:3'"
-        validation-label="Campo Nome completo"
-        placeholder="Digite seu nome"
-        v-model="formData.name"
+        :id="field.id"
+        :type="field.type"
+        :name="field.id"
+        :placeholder="field.placeholder"
+        v-model="formData[field.id]"
         class="form-input"
-      >
-        <template #validation="{ message }">
-          <span class="form-error">{{ message }}</span>
-        </template>
-      </FormKit>
-    </div>
-
-    <!-- Email -->
-    <div class="form-group">
-      <label for="email" class="form-label">Email</label>
-      <FormKit
-        id="email"
-        type="email"
-        name="email"
-        :validation="'required|email'"
-        validation-label="Campo Email"
-        placeholder="Digite seu email"
-        v-model="formData.email"
-        class="form-input"
-      >
-        <template #validation="{ message }">
-          <span class="form-error">{{ message }}</span>
-        </template>
-      </FormKit>
-    </div>
-
-    <!-- Senha -->
-    <div class="form-group">
-      <label for="password" class="form-label">Senha</label>
-      <FormKit
-        id="password"
-        type="password"
-        name="password"
-        :validation="'required|min:6'"
-        validation-label="Campo Senha"
-        placeholder="Digite sua senha"
-        v-model="formData.password"
-        class="form-input"
-      >
-        <template #validation="{ message }">
-          <span class="form-error">{{ message }}</span>
-        </template>
-      </FormKit>
+      />
     </div>
 
     <!-- Botão de envio -->
@@ -78,25 +34,26 @@ export default {
       type: String,
       default: "Enviar",
     },
+    fields: {
+      type: Array,
+      default: () => [
+        { id: "name", type: "text", label: "Nome", placeholder: "Digite seu nome" },
+        { id: "email", type: "email", label: "E-mail", placeholder: "Digite seu e-mail" },
+        { id: "message", type: "textarea", label: "Mensagem", placeholder: "Digite sua mensagem" },
+      ],
+    },
   },
   data() {
     return {
-      formData: {
-        name: "",
-        email: "",
-        password: "",
-      },
+      formData: this.fields.reduce((acc, field) => {
+        acc[field.id] = "";
+        return acc;
+      }, {}),
     };
   },
   methods: {
     handleSubmit() {
-      alert(
-        `Formulário enviado com sucesso!\n\n${JSON.stringify(
-          this.formData,
-          null,
-          2
-        )}`
-      );
+      alert(`Formulário enviado com sucesso!\n\n${JSON.stringify(this.formData, null, 2)}`);
       this.$emit("submit", this.formData);
     },
   },
@@ -142,29 +99,20 @@ export default {
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #374151; /* 🔥 Ajustando fundo do input */
+  color: #ffffff;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-input:focus {
   border-color: #7638c7;
-  box-shadow: 0 0 5px rgba(118, 56, 199, 0.3);
-  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  background-color: #1f2937;
 }
 
 .form-input::placeholder {
-  color: #aaa;
-}
-
-.form-group .form-error {
-  display: block !important;
-  margin-top: 5px !important;
-  font-size: 12px !important;
-  color: #d9534f !important;
-  list-style-type: none !important;
-  padding: 0 !important;
+  color: #9ca3af;
 }
 
 .submit-button {
@@ -184,17 +132,5 @@ export default {
 .submit-button:hover {
   background-color: #7638c7;
   box-shadow: 0 4px 8px rgba(118, 56, 199, 0.2);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 </style>
