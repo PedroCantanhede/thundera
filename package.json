@@ -1,6 +1,6 @@
 {
   "name": "thundera-lib",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": false,
   "main": "dist/thundera-lib.umd.js",
   "module": "dist/ThunderaLib.umd.js",
