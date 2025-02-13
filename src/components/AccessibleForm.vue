@@ -11,6 +11,7 @@
         :name="field.id"
         :placeholder="field.placeholder"
         v-model="formData[field.id]"
+        validation=""
         class="form-input"
       />
     </div>
